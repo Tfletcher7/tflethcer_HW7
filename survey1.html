@@ -1,10 +1,91 @@
-<html>
-    <p>
-        <button onclick="window.location.href='./survey2.html';">
-            Next Page
-        </button>
-    
-        <p>Page 1 of 2</p>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/stylesheet.css" />
+</head>
+<body>
+   <h1>Survey Page 1</h1>
+   <form action="">
+    <fieldset>
+        <legend>Contact Information</legend>
+        <div><label for="fname"> First name:
+            <input id= fname type="text" autofocus>
+        </label></div>
+
+        <div><label for="lname"> Last Name:
+            <input id= lname type="text">
+        </label></div>
+        
+       
+        <div><label for="email"> Email:
+            <input id= email type="email" required>
+        </label></div>
+        <div>
+            <label for="Gender"> Gender:
+                <input type="radio" name="gender" id="Male"> Male
+                <input type="radio" name="gender" id="Female"> Female
+                <input type="radio" name="gender" id="non-binary"> Prefer Not To Say
+            </label>
+        </div>
+
+        <div>
+            <label for="beer"> Choose a Beer:
+                <select name="Auto" id="beer" required>
+                    <option value=""></option>
+                    <option value="Busch">Busch</option>
+                    <option value="Coors">Coors</option>
+                    <option value="Miller">Miller</option>
+                    <option value="Budweiser">Budweiser</option>
+                    <option value="other">Other</option>
+
+                </select>
+            </label>
+        </div>
+
+        <div>
+            <label for="social">Where do you normally drink beer?</label>
+            <br>
+            <input type="checkbox" id="house" name="social" value="house">
+            <label for="house">House</label>
+            <br>
+            <input type="checkbox" id="bar" name="social" value="bar">
+            <label for="bar">Bar</label>
+            <br>
+            <input type="checkbox" id="restaurant" name="social" value="restaurant">
+            <label for="restaurant">Restaurant</label>
+            <br>
+            <input type="checkbox" id="party" name="social" value="party">
+            <label for="party">Party</label>
+            <br>
+            <input type="checkbox" id="anywhere" name="social" value="anywhere">
+            <label for="anywhere">Wherever I can</label>
+          </div>
+          
+          <script>
+            var anywhereCheckbox = document.getElementById("anywhere");
+            anywhereCheckbox.addEventListener("change", function() {
+              if (anywhereCheckbox.checked) {
+                var checkboxes = document.getElementsByName("social");
+                for (var i = 0; i < checkboxes.length; i++) {
+                  if (checkboxes[i].id != "anywhere") {
+                    checkboxes[i].checked = false;
+                  }
+                }
+              }
+            });
+          </script>
+          
+    </fieldset>
+   </form>
+   <p>
+    <button onclick="window.location.href='./survey2.html';">
+        Next Page
+    </button>
+
+    <p>Page 1 of 2</p>
+</body>
 </html>

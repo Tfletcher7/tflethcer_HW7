@@ -1,10 +1,121 @@
-<html>
-    <p>
-        <button onclick="window.location.href='./thankyou.html';">
-            Finish Survey
-        </button>
-    
-        <p>Page 2 of 2</p>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey2</title>
+    <link rel="stylesheet" href="./css/stylesheet.css" />
+</head>
+<body>
+    <form action="">
+        <fieldset>
+    <p>How much do you like beer?</p>
+<div>
+  <input type="radio" id="rating1" name="rating" value="1">
+  <label for="rating1">I hate it </label>
+
+  <input type="radio" id="rating2" name="rating" value="2">
+  <label for="rating2">2</label>
+
+  <input type="radio" id="rating3" name="rating" value="3">
+  <label for="rating3">3</label>
+
+  <input type="radio" id="rating4" name="rating" value="4">
+  <label for="rating4">4</label>
+
+  <input type="radio" id="rating5" name="rating" value="5">
+  <label for="rating5">I love it</label>
+</div>
+
+<p>How important is the price beer?</p>
+<div>
+  <input type="radio" id="rating1" name="rating" value="1">
+  <label for="rating1">I will buy what is cheap</label>
+
+  <input type="radio" id="rating2" name="rating" value="2">
+  <label for="rating2">2</label>
+
+  <input type="radio" id="rating3" name="rating" value="3">
+  <label for="rating3">3</label>
+
+  <input type="radio" id="rating4" name="rating" value="4">
+  <label for="rating4">4</label>
+
+  <input type="radio" id="rating5" name="rating" value="5">
+  <label for="rating5">I will buy my favorite beer regardless of price</label>
+</div>
+
+<p>Can or bottled Beer?</p>
+<div>
+    <label for="type"> 
+        <input type="radio" name="type" id="can"> Can
+        <input type="radio" name="type" id="bottle"> Bottle
+    </label>
+</div>
+
+<div>
+    <label for="food"> Best food pairing for beer:
+        <select name="Auto" id="beer" required>
+            <option value=""></option>
+            <option value="Pizza">Pizza</option>
+            <option value="Wings">Wings</option>
+            <option value="Burger">Burger</option>
+            <option value="other">Other/None</option>
+
+        </select>
+    </label>
+</div>
+<div>
+<form>
+    <fieldset>
+      <legend>Favortie time to drink beer?(pick 2):</legend>
+      <input type="checkbox" id="time1" name="time" value="work">
+      <label for="time1">After work beer</label><br>
+      <input type="checkbox" id="time2" name="time" value="Friday">
+      <label for="time2">Beer on a Friday night</label><br>
+      <input type="checkbox" id="time3" name="time" value="golf">
+      <label for="time3">Golf Course</label><br>
+      <input type="checkbox" id="time4" name="time" value="Vaction">
+      <label for="time4">First beer on Vacation</label><br>
+      <input type="checkbox" id="time5" name="time" value="Sports">
+      <label for="time5">Tailgating beer</label><br>
+      <input type="checkbox" id="time6" name="time" value="shower">
+      <label for="time6">Shower beer</label><br>
+      <input type="checkbox" id="time7" name="time" value="boat">
+      <label for="time6">Boating beer</label><br>
+    </fieldset>
+  </form>
+  
+  <script>
+    const maxChecked = 3;
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let checkedCount = 0;
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          checkedCount++;
+        } else {
+          checkedCount--;
+        }
+        if (checkedCount > maxChecked) {
+          checkbox.checked = false;
+          checkedCount--;
+        }
+      });
+    });
+  </script>
+  </div>
+  
+</fieldset>
+</form>
+
+<div>
+    <button onclick="window.location.href='./thankyou.html';">
+        Finish Survey
+    </button>
+</div>
+    <p>Page 2 of 2</p>
+</body>
+
 </html>

@@ -1,2 +1,35 @@
-
+button {
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  body {
+    background-color: #F8E6A9; /* light amber */
+    color: #3D3D3D; /* dark brown */
+  }
+  
+  h1, h2, h3 {
+    color: #FFC107; /* gold */
+  }
+  
+  a {
+    color: #F0DBA2; /* light goldenrod */
+  }
+  
+  button {
+    background-color: #8B4513; /* saddle brown */
+    color: #FFFFFF; /* white */
+  }
+  
+  input[type="text"], input[type="email"] {
+    border: 2px solid #8B0000; /* dark red */
+    background-color: #FFF8DC; /* cornsilk */
+  }
+  
+  label {
+    color: #A52A2A; /* brown */
+  }
+ 
+  
   

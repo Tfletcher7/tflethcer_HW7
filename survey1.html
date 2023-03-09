@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
    <h1>Survey Page 1</h1>
-   <form action="">
+   <form action="page1">
     <fieldset>
         <legend>Contact Information</legend>
         <div><label for="fname"> First name:
@@ -25,60 +25,56 @@
             <input id= email type="email" required>
         </label></div>
         <div>
-            <label for="Gender"> Gender:
-                <input type="radio" name="gender" id="Male"> Male
-                <input type="radio" name="gender" id="Female"> Female
-                <input type="radio" name="gender" id="non-binary"> Prefer Not To Say
-            </label>
-        </div>
-
-        <div>
-            <label for="beer"> Choose a Beer:
-                <select name="Auto" id="beer" required>
-                    <option value=""></option>
-                    <option value="Busch">Busch</option>
-                    <option value="Coors">Coors</option>
-                    <option value="Miller">Miller</option>
-                    <option value="Budweiser">Budweiser</option>
-                    <option value="other">Other</option>
-
-                </select>
-            </label>
-        </div>
-
-        <div>
-            <label for="social">Where do you normally drink beer?</label>
+            <p>Select your gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
             <br>
-            <input type="checkbox" id="house" name="social" value="house">
-            <label for="house">House</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
             <br>
-            <input type="checkbox" id="bar" name="social" value="bar">
-            <label for="bar">Bar</label>
-            <br>
-            <input type="checkbox" id="restaurant" name="social" value="restaurant">
-            <label for="restaurant">Restaurant</label>
-            <br>
-            <input type="checkbox" id="party" name="social" value="party">
-            <label for="party">Party</label>
-            <br>
-            <input type="checkbox" id="anywhere" name="social" value="anywhere">
-            <label for="anywhere">Wherever I can</label>
+            <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
+            <label for="prefer-not-to-say">Prefer not to say</label>
           </div>
           
-          <script>
-            var anywhereCheckbox = document.getElementById("anywhere");
-            anywhereCheckbox.addEventListener("change", function() {
-              if (anywhereCheckbox.checked) {
-                var checkboxes = document.getElementsByName("social");
-                for (var i = 0; i < checkboxes.length; i++) {
-                  if (checkboxes[i].id != "anywhere") {
-                    checkboxes[i].checked = false;
-                  }
-                }
-              }
-            });
-          </script>
+
+        <div>
+            <label for="beer">Choose your favorite beer:</label>
+            <select name="beer" id="beer">
+              <option value="Busch">Busch</option>
+              <option value="Coors">Coors</option>
+              <option value="Miller">Miller</option>
+              <option value="Budweiser">Budweiser</option>
+              <option value="Other">Other</option>
+            </select>
+        
+        </div>
+
+        <p>Where do you normally drink beer?</p>
+        <div>
+          <input type="checkbox" id="place1" name="place" value="house">
+          <label for="place1">House</label><br>
+          <input type="checkbox" id="place2" name="place" value="bar">
+          <label for="place2">Bar</label><br>
+          <input type="checkbox" id="place3" name="place" value="restaurant">
+          <label for="place3">Restaurant</label><br>
+          <input type="checkbox" id="place4" name="place" value="party">
+          <label for="place4">Party</label><br>
+          <input type="checkbox" id="place5" name="place" value="wherever">
+          <label for="place5">Wherever I can</label><br>
+        </div>
+        
+        <script>
+          const whereverCheckbox = document.getElementById('place5');
+          const otherCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(#place5)');
           
+          whereverCheckbox.addEventListener('change', () => {
+            if (whereverCheckbox.checked) {
+              otherCheckboxes.forEach(checkbox => checkbox.checked = false);
+            }
+          });
+        </script>
+        
+        
     </fieldset>
    </form>
    <p>

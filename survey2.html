@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey2</title>
-    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-    <form action="">
+    <form action="page2">
         <fieldset>
     <p>How much do you like beer?</p>
 <div>
@@ -30,53 +30,48 @@
 
 <p>How important is the price beer?</p>
 <div>
-  <input type="radio" id="rating1" name="rating" value="1">
+  <input type="radio" id="rating6" name="rating" value="1">
   <label for="rating1">I will buy what is cheap</label>
 
-  <input type="radio" id="rating2" name="rating" value="2">
+  <input type="radio" id="rating7" name="rating" value="2">
   <label for="rating2">2</label>
 
-  <input type="radio" id="rating3" name="rating" value="3">
+  <input type="radio" id="rating8" name="rating" value="3">
   <label for="rating3">3</label>
 
-  <input type="radio" id="rating4" name="rating" value="4">
+  <input type="radio" id="rating9" name="rating" value="4">
   <label for="rating4">4</label>
 
-  <input type="radio" id="rating5" name="rating" value="5">
+  <input type="radio" id="rating10" name="rating" value="5">
   <label for="rating5">I will buy my favorite beer regardless of price</label>
 </div>
 
-<p>Can or bottled Beer?</p>
+<p>Can or Bottle?</p>
+<input type="radio" id="can" name="can_or_bottle" value="can">
+<label for="can">Can</label><br>
+<input type="radio" id="bottle" name="can_or_bottle" value="bottle">
+<label for="bottle">Bottle</label><br>
+
 <div>
-    <label for="type"> 
-        <input type="radio" name="type" id="can"> Can
-        <input type="radio" name="type" id="bottle"> Bottle
-    </label>
+   <label for="food-pairing">Best food pairing with beer:</label>
+<select id="food-pairing" name="food-pairing">
+  <option value="pizza">Pizza</option>
+  <option value="wings">Wings</option>
+  <option value="burger">Burger</option>
+  <option value="other-none">Other/None</option>
+</select>
 </div>
 
 <div>
-    <label for="food"> Best food pairing for beer:
-        <select name="Auto" id="beer" required>
-            <option value=""></option>
-            <option value="Pizza">Pizza</option>
-            <option value="Wings">Wings</option>
-            <option value="Burger">Burger</option>
-            <option value="other">Other/None</option>
-
-        </select>
-    </label>
-</div>
-<div>
-<form>
     <fieldset>
-      <legend>Favortie time to drink beer?(pick 2):</legend>
+      <legend>Favortie time to drink beer?(pick 3):</legend>
       <input type="checkbox" id="time1" name="time" value="work">
       <label for="time1">After work beer</label><br>
       <input type="checkbox" id="time2" name="time" value="Friday">
       <label for="time2">Beer on a Friday night</label><br>
       <input type="checkbox" id="time3" name="time" value="golf">
-      <label for="time3">Golf Course</label><br>
-      <input type="checkbox" id="time4" name="time" value="Vaction">
+      <label for="time3">Golf Course beer</label><br>
+      <input type="checkbox" id="time4" name="time" value="Vacation">
       <label for="time4">First beer on Vacation</label><br>
       <input type="checkbox" id="time5" name="time" value="Sports">
       <label for="time5">Tailgating beer</label><br>
@@ -85,7 +80,6 @@
       <input type="checkbox" id="time7" name="time" value="boat">
       <label for="time6">Boating beer</label><br>
     </fieldset>
-  </form>
   
   <script>
     const maxChecked = 3;
